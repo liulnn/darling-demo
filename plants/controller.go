@@ -14,3 +14,17 @@ func (c *PlantsCtrl) Post() {
 
 	c.Response.StatusCode = 201
 }
+
+func (c *PlantsCtrl) Get() {
+
+	c.Response.StatusCode = 200
+}
+
+type PlantCtrl struct {
+	darling.Controller
+}
+
+func (c *PlantCtrl) Get() {
+	fmt.Println(c.PathParams[0])
+	c.Response.StatusCode = 200
+}
