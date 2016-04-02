@@ -10,7 +10,10 @@ type PlantsCtrl struct {
 }
 
 func (c *PlantsCtrl) Post() {
-	fmt.Println(c.Request.In)
+	req := c.Request.In
+	req.ParseForm()
+	name := req.PostFormValue("name")
+	fmt.Println("name:", name)
 
 	c.Response.StatusCode = 201
 }
@@ -25,6 +28,7 @@ type PlantCtrl struct {
 }
 
 func (c *PlantCtrl) Get() {
-	fmt.Println(c.PathParams[0])
+	plantId := c.PathParams[0]
+	fmt.Println("plantId:", plantId)
 	c.Response.StatusCode = 200
 }
