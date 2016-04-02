@@ -2,6 +2,7 @@ package main
 
 import (
 	"darling"
+	"plants"
 )
 
 var app = darling.NewApp()
