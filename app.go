@@ -2,11 +2,11 @@ package main
 
 import (
 	"darling"
-	"plants"
+	"darling-demo/plants"
 )
 
-var app = darling.NewApp()
-
 func main() {
+	var app = darling.NewApp()
+	app.Handlers.Add("/v1/plants", &plants.PlantsCtrl{})
 	app.Run("127.0.0.1", 7432)
 }
