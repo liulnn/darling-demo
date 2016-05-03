@@ -1,4 +1,4 @@
-package plant
+package plants
 
 import (
 	"time"
@@ -17,6 +17,7 @@ type Plant struct {
 
 func Add(p Plant) (err error, plantId string) {
 	plants[p.PlantId] = p
+	return nil, p.PlantId
 }
 
 func Update(p Plant) {
